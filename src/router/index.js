@@ -90,6 +90,9 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior() {
+    if (savedPosition) {
+      return savedPosition
+    }
     return { top: 0 }
   }
 })
